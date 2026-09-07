@@ -19,7 +19,7 @@ type Project = {
   description: string;
   tags: string[];
   image: string;
-  link: string;
+  link?: string;
   projectLink?: string;
 };
 
@@ -35,6 +35,7 @@ function getTagIcon(tag: string) {
     'TypeScript': 'devicon-typescript-plain colored', 'PostgreSQL + Prisma': 'devicon-postgresql-plain colored',
     'lucide-react': 'devicon-react-original colored', 'Svelte': 'devicon-svelte-plain colored',
     'JavaScript': 'devicon-javascript-plain colored', 'CSS': 'devicon-css3-plain colored',
+    '.NET': 'devicon-dotnetcore-plain colored', 'jQuery': 'devicon-jquery-plain colored',
   };
   if (dm[tag]) return <i className={`${dm[tag]} text-sm leading-none`} />;
   const lm: Record<string, React.ReactElement> = {
@@ -68,6 +69,7 @@ export default function Portfolio() {
   };
 
   const projects: Project[] = [
+    { title: 'BidPit', description: 'Personal project — an online auction platform where sellers list items and buyers place live competitive bids, with bidding history and automatic winner resolution.', tags: ['.NET', 'C#', 'jQuery', 'JavaScript'], image: '/bidpit.png', projectLink: 'https://bidpit.onrender.com/' },
     { title: 'Ruined Light', description: 'A game developed using only Java alone. An RPG where you defeat each level to reach the boss. Features different playable characters and combat mechanics.', tags: ['Java', 'Game Development', 'RPG'], image: '/RuinedLight.png', link: 'https://github.com/frnczkyl/Ruined_Light_OOP1_PROJECT' },
     { title: 'ChipIn', description: 'Collaborative expense tracking platform with expense input system, participant management, and automated cost-splitting calculations for group events.', tags: ['Java', 'React.js', 'Android'], image: '/ChipIn.png', link: 'https://github.com/Jeskunnn/ChipIn', projectLink: 'https://chip-in-phi.vercel.app/' },
     { title: 'Sleepsync', description: 'Full-stack sleep tracking web app with pattern monitoring, personalized relaxation tips, optimal bedtime calculations, and customizable alarm scheduling.', tags: ['Django', 'Python', 'Healthcare'], image: '/SleepSync.png', link: 'https://github.com/ciddysed/IT342_SleepSync', projectLink: 'https://sleepsyncapp.netlify.app' },
@@ -102,10 +104,13 @@ export default function Portfolio() {
       { name: 'Next.js', icon: 'devicon-nextjs-plain text-[var(--foreground)]' },
       { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain colored' },
       { name: 'Django', icon: 'devicon-django-plain icon-django' },
+      { name: '.NET', icon: 'devicon-dotnetcore-plain colored' },
+      { name: 'jQuery', icon: 'devicon-jquery-plain colored' },
       { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
       { name: 'Firebase', icon: 'devicon-firebase-plain colored' },
       { name: 'Supabase', icon: 'devicon-supabase-plain colored' },
       { name: 'XAMPP', custom: true, src: '/Xampp.svg' },
+      { name: 'VS Code', icon: 'devicon-vscode-plain colored' },
       { name: 'Git', icon: 'devicon-git-plain colored' },
       { name: 'GitHub', icon: 'devicon-github-plain text-[var(--foreground)]' },
       { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark colored' },
@@ -345,7 +350,7 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto w-full">
           <span className="tag-pill mb-3 inline-flex">Projects</span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-10">
-            Projects I&apos;ve <span className="text-[var(--muted)]">shipped for school.</span>
+            Projects I&apos;ve <span className="text-[var(--muted)]">shipped for school &amp; on my own.</span>
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
@@ -377,9 +382,11 @@ export default function Portfolio() {
                               ))}
                             </div>
                             <div className="action-row flex gap-3 mt-4">
-                              <a href={proj.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="btn btn-outline btn-sm">
-                                <GithubIcon width={15} height={15} />GitHub
-                              </a>
+                              {proj.link && (
+                                <a href={proj.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="btn btn-outline btn-sm">
+                                  <GithubIcon width={15} height={15} />GitHub
+                                </a>
+                              )}
                               {proj.projectLink && (
                                 <a href={proj.projectLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="btn btn-amber btn-sm">
                                   <ExternalLink className="w-3.5 h-3.5" />Live Demo

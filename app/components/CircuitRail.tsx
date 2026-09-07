@@ -33,9 +33,11 @@ const STACK: Item[] = [
   { name: 'Next.js', icon: 'devicon-nextjs-plain' },
   { name: 'Svelte', icon: 'devicon-svelte-plain colored' },
   { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain colored' },
+  { name: 'jQuery', icon: 'devicon-jquery-plain colored' },
 
   { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
   { name: 'Django', icon: 'devicon-django-plain' },
+  { name: '.NET', icon: 'devicon-dotnetcore-plain colored' },
   { name: 'Prisma', icon: 'devicon-prisma-original' },
 
   { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
@@ -49,6 +51,7 @@ const STACK: Item[] = [
   { name: 'Railway', icon: 'devicon-railway-original' },
   { name: 'Docker', icon: 'devicon-docker-plain colored' },
 
+  { name: 'VS Code', icon: 'devicon-vscode-plain colored' },
   { name: 'Git', icon: 'devicon-git-plain colored' },
   { name: 'GitHub', icon: 'devicon-github-plain' },
   { name: 'Postman', icon: 'devicon-postman-plain colored' },

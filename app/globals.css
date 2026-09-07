@@ -7,8 +7,8 @@
   --muted: #8a8371;
   --amber: #f3b44a;
   --amber-ink: #17150e;
-  --border: #e4ddc6;
-  --card: #fffdf7;
+  --border: #ddd4b8;
+  --card: #f1ead6;
   --rule: rgba(23, 21, 14, 0.045);
   --panel: rgba(12, 11, 8, 0.86);
 }
@@ -434,7 +434,7 @@
   gap: 6px;
   border: 1.5px solid var(--border);
   border-radius: 6px;
-  background: color-mix(in srgb, var(--card) 82%, transparent);
+  background: color-mix(in srgb, var(--card) 94%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
